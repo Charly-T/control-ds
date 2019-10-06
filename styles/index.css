@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=BenchNine');
+
+:root {
+  /* HUE */
+  --primary-hue: 150;
+  --error-hue: 0;
+  --warn-hue: 25;
+  --dark-hue: 220;
+  /* SATURATION */
+  --primary-saturation: 60%;
+  --dark-saturation: 10%;
+  /* LUMINOSITY */
+  --active-luminosity: 50%;
+  --pasive-luminosity: 25%;
+  --dark-luminosity: 15%;
+  --black-luminosity: 0%;
+  --white-luminosity: 100%;
+  /* COLORS */
+  --active-color: hsl(var(--primary-hue), var(--primary-saturation), var(--active-luminosity));
+  --pasive-color: hsl(var(--primary-hue), var(--primary-saturation), var(--pasive-luminosity));
+  --error-color: hsl(var(--error-hue), var(--primary-saturation), var(--active-luminosity));
+  --warn-color: hsl(var(--warn-hue), var(--primary-saturation), var(--active-luminosity));
+  --dark-color: hsl(var(--dark-hue), var(--dark-saturation), var(--dark-luminosity));
+  --black-color: hsl(var(--primary-hue), var(--primary-saturation), var(--black-luminosity));
+  --white-color: hsl(var(--primary-hue), var(--primary-saturation), var(--white-luminosity));
+
+  --background-color: var(--dark-color);
+  --font-family: 'BenchNine', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+

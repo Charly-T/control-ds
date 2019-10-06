@@ -1,0 +1,20 @@
+.control-form {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+.control-form button + label {
+  margin-top: 8px;
+}
+
+.control-form label + button {
+  margin-top: 8px;
+}
+
+
+label {
+  color: white;
+  text-transform: uppercase;
+}
