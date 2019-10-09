@@ -25,28 +25,35 @@
     </ctrl-tabs-bar>
     <ctrl-tabs-content>
       <ctrl-tab-content tab="buttons">
-        <ctrl-button>Test</ctrl-button>
-        <div class="control-form">
-          <label>Label</label>
+        <div class="p-10">
           <ctrl-button>Test</ctrl-button>
+          <div class="control-form">
+            <label>Label</label>
+            <ctrl-button>Test</ctrl-button>
+          </div>
+          <div class="control-form">
+            <ctrl-button>Test</ctrl-button>
+            <label>Label</label>
+          </div>
+          <ctrl-button error>Test</ctrl-button>
+          <ctrl-button warn>Test</ctrl-button>
+          <ctrl-button active>Test</ctrl-button>
+          <ctrl-button forbidden>Test</ctrl-button>
         </div>
-        <div class="control-form">
-          <ctrl-button>Test</ctrl-button>
-          <label>Label</label>
-        </div>
-        <ctrl-button error>Test</ctrl-button>
-        <ctrl-button warn>Test</ctrl-button>
-        <ctrl-button active>Test</ctrl-button>
-        <ctrl-button forbidden>Test</ctrl-button>
       </ctrl-tab-content>
       <ctrl-tab-content tab="tabs">
-        Tabs example
+        <div class="p-10">
+          Tabs example
+        </div>
       </ctrl-tab-content>
       <ctrl-tab-content tab="test">
-        Testitos
+        <div class="p-10">
+          Testitos
+        </div>
       </ctrl-tab-content>
     </ctrl-tabs-content>
   </ctrl-tabs>
+  <ctrl-theme></ctrl-theme>
   <!-- Scripts -->
   <script src="scripts/ctrl.js" type="module"></script>
 </body>

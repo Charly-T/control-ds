@@ -1,3 +1,4 @@
+import * as theme from './theme.js';
 import * as button from './button.js';
 import * as tabs from './tabs.js';
 import * as tabsBar from './tabsBar.js';
