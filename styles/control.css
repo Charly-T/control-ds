@@ -15,6 +15,10 @@
 
 
 label {
-  color: white;
+  color: var(--white-color);
   text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
 }

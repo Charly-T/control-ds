@@ -17,6 +17,7 @@ class CtrlTabContent extends HTMLElement {
   handleEvents() {
     const load = new CustomEvent('tabContentLoad', {
       detail: {
+        name: this.name,
         el: this
       },
       bubbles: true
@@ -25,14 +26,13 @@ class CtrlTabContent extends HTMLElement {
   }
 
   static get observedAttributes() {
-    // return ['error', 'warn', 'active', 'forbidden'];
+    return ['tab'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    // if(this.shadow && newValue !== null) {
-    //   const button = this.shadow.querySelector('button');
-    //   button.classList.add(name);
-    // }
+    if (name === 'tab' && newValue !== null) {
+      this.name = newValue;
+    }
   }
   
   render(shadow) {

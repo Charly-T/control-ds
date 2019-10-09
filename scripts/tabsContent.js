@@ -6,6 +6,8 @@ class CtrlTabsContent extends HTMLElement {
   constructor() {
     super();
 
+    this.tabs = {};
+    
     this.shadow = this.attachShadow({mode: 'open'});
     this.style(this.shadow);
     this.render(this.shadow);
@@ -22,10 +24,15 @@ class CtrlTabsContent extends HTMLElement {
       bubbles: true
     });
     this.dispatchEvent(load);
+    this.addEventListener('tabContentLoad', (e) => {
+      this.tabs[e.detail.name] = e.detail.el;
+      this.tabs[e.detail.name].classList.add('hidden');
+    });
     this.addEventListener('tabContentChange', (e) => {
-      const selectTab = new CustomEvent('tab-');
-      console.log('lololol', e.detail);
-      
+      Object.keys(this.tabs).forEach(i => {
+        this.tabs[i].classList.add('hidden');
+      });
+      this.tabs[e.detail].classList.remove('hidden');
     });
   }
 

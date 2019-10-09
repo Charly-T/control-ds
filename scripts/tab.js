@@ -55,7 +55,8 @@ class CtrlTab extends HTMLElement {
         alignItems: 'flex-end',
         borderRight: '1px solid var(--black-color)',
         boxSizing: 'border-box',
-        padding: '5px'
+        padding: '5px',
+        cursor: 'pointer'
       }
     }).toStyleElement();
     shadow.appendChild(styleTag);

@@ -17,7 +17,6 @@ class CtrlTabs extends HTMLElement {
   handleEvents() {
     this.shadow.addEventListener('tabSelected', (e) => {
       e.stopPropagation();
-      console.log('clicked on mf 666', e.detail);
       const tabContentChange = new CustomEvent('tabContentChange', {
         detail: e.detail
       });
