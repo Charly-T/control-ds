@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-  <!--  Meta  -->
   <meta charset="UTF-8" />
-  <title>My New Pen!</title>
-  <!--  Styles  -->
+  <title>Control UI</title>
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/control.css">
 </head>
@@ -13,17 +11,22 @@
 <body>
   <ctrl-tabs>
     <ctrl-tabs-bar>
+      <ctrl-tab tab="intro" selected>
+        Intro
+      </ctrl-tab>
       <ctrl-tab tab="buttons">
         Buttons
       </ctrl-tab>
       <ctrl-tab tab="tabs">
         Tabs
       </ctrl-tab>
-      <ctrl-tab tab="test">
-        test
-      </ctrl-tab>
     </ctrl-tabs-bar>
     <ctrl-tabs-content>
+      <ctrl-tab-content tab="intro">
+        <div class="p-10">
+          This is an small example of working native web components.
+        </div>
+      </ctrl-tab-content>
       <ctrl-tab-content tab="buttons">
         <div class="p-10">
           <ctrl-button>Test</ctrl-button>
@@ -43,18 +46,12 @@
       </ctrl-tab-content>
       <ctrl-tab-content tab="tabs">
         <div class="p-10">
-          Tabs example
-        </div>
-      </ctrl-tab-content>
-      <ctrl-tab-content tab="test">
-        <div class="p-10">
-          Testitos
+          This menu is a working example of tabs
         </div>
       </ctrl-tab-content>
     </ctrl-tabs-content>
   </ctrl-tabs>
   <ctrl-theme></ctrl-theme>
-  <!-- Scripts -->
   <script src="scripts/ctrl.js" type="module"></script>
 </body>
 
