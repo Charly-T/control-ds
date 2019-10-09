@@ -22,11 +22,15 @@ class CtrlTab extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['tab'];
+    return ['tab', 'selected'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    this.value = newValue;
+    if (name === 'tab') {
+      this.value = newValue;
+    } else if (name === 'selected') {
+      this.tabClick();
+    }
   }
 
   tabClick() {

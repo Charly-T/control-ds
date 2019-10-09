@@ -17,14 +17,22 @@ class CtrlTabs extends HTMLElement {
   handleEvents() {
     this.shadow.addEventListener('tabSelected', (e) => {
       e.stopPropagation();
-      const tabContentChange = new CustomEvent('tabContentChange', {
-        detail: e.detail
-      });
-      this.content.dispatchEvent(tabContentChange);
+      this.selected = e.detail;
+      if (this.content) {
+        this.selectTab();
+      }
     });
     this.shadow.addEventListener('tabsContentLoad', (e) => {
       this.content = e.detail.el;
+      this.selectTab();
     })
+  }
+
+  selectTab() {
+    const tabContentChange = new CustomEvent('tabContentChange', {
+      detail: this.selected
+    });
+    this.content.dispatchEvent(tabContentChange);
   }
 
   static get observedAttributes() {

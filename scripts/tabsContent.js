@@ -17,6 +17,22 @@ class CtrlTabsContent extends HTMLElement {
   }
   
   handleEvents() {
+    this.addEventListener('tabContentLoad', (e) => {
+      this.tabs[e.detail.name] = e.detail.el;
+      if (e.detail.name !== this.selected) {
+        this.tabs[e.detail.name].classList.add('hidden');
+      }
+    });
+    this.addEventListener('tabContentChange', (e) => {
+      this.selected = e.detail;
+      Object.keys(this.tabs).forEach(i => {
+        if (i !== e.detail) {
+          this.tabs[i].classList.add('hidden');
+        } else {
+          this.tabs[e.detail].classList.remove('hidden');
+        }
+      });
+    });
     const load = new CustomEvent('tabsContentLoad', {
       detail: {
         el: this
@@ -24,16 +40,6 @@ class CtrlTabsContent extends HTMLElement {
       bubbles: true
     });
     this.dispatchEvent(load);
-    this.addEventListener('tabContentLoad', (e) => {
-      this.tabs[e.detail.name] = e.detail.el;
-      this.tabs[e.detail.name].classList.add('hidden');
-    });
-    this.addEventListener('tabContentChange', (e) => {
-      Object.keys(this.tabs).forEach(i => {
-        this.tabs[i].classList.add('hidden');
-      });
-      this.tabs[e.detail].classList.remove('hidden');
-    });
   }
 
   static get observedAttributes() {
